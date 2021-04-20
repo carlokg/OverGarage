@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">OverGarage</string>
+    <string name="foto_login">Foto Login</string>
+    <string name="hint_nombre_usuario">Nombre Usuario</string>
+    <string name="hint_email">Correo Electronico</string>
+    <string name="hint_pw">Contraseña</string>
+    <string name="hint_pw2">Confirmar contraseña</string>
+    <string name="hint_dir">Direccion</string>
+    <string name="hint_desc">Descripcion</string>
+    <string name="btn_registro">Registrarse</string>
+    <string name="hint_ciudad">Ciudad</string>
+    <string name="hint_taller">Taller</string>
 </resources>
