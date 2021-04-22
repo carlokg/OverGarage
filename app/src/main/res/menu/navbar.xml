@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/explora"
+        android:title="@string/explora"
+        />
+    <item
+        android:id="@+id/social"
+        android:title="Item 1"
+        />
+    <item
+        android:id="@+id/perfil"
+        android:title="Item 2"
+        />
+    <item
+        android:id="@+id/ayuda"
+        android:title="Item 3"
+        />
+    <item
+        android:id="@+id/config"
+        android:title="Item 4"
+        />
+
+</menu>
+
+<!-- Para añadir un icono a cada uno de los elementos android:icon=""-->

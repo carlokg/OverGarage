@@ -10,8 +10,8 @@
     <string name="btn_registro">Registrarse</string>
     <string name="hint_ciudad">Ciudad</string>
     <string name="hint_taller">Taller</string>
-    <string name="hint_nombre_usuario">Nombre de Usuario</string>
     <string name="hint_password">Contraseña</string>
     <string name="btn_login">Login</string>
     <string name="btn_regis">Registrarse</string>
+    <string name="explora">Explora</string>
 </resources>
