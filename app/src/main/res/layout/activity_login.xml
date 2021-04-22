@@ -73,7 +73,7 @@
 
     <LinearLayout
         android:id="@+id/llo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnRegis"
         android:layout_marginTop="32dp"
@@ -84,13 +84,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@android:drawable/ic_menu_edit"
-            android:layout_marginLeft="64dp" />
+            />
 
         <ImageButton
             android:id="@+id/ibFacebook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="112dp"
+            android:layout_marginLeft="64dp"
             app:srcCompat="@android:drawable/ic_menu_info_details" />
 
 
