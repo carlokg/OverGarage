@@ -11,9 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/navbar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:itemIconTint="blue"
-        app:itemTextColor="blue"/>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <FrameLayout
         android:id="@+id/fragment_container"

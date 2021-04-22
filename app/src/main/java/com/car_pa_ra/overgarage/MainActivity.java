@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity implements OnControlerFragmentListener{
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements OnControlerFragme
         }
     };
 
-    @Override
     public void selectFrgment(String texto) {
 
         //ESTE METODO ESTA POR VER SI LO DESARROLLAMOS, PORQUE LO HICIMOS PARA AJUSTES
