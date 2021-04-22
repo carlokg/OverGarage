@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">OverGarage</string>
+    <string name="hint_nombre_usuario">Nombre de Usuario</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_regis">btn_regis</string>
 </resources>
