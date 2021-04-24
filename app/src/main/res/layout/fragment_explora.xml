@@ -3,78 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentExplora">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ExploraFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/rl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_below="@+id/tvExplora">
 
-            <ImageView
-                android:id="@+id/imagen"
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvExplora"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp96"
-                android:scaleType="centerCrop"
-                android:contentDescription="@string/img_tarjeta"
-                />
+                android:layout_height="match_parent"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="vertical"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="@dimen/sp16"
-                    android:layout_marginRight="@dimen/sp16">
-
-                    <TextView
-                        android:id="@+id/titulo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/title"
-                        android:textAppearance="?attr/textAppearanceHeadline6"
-                        android:textColor="@color/black"
-                        android:layout_weight="2"
-                        android:textSize="@dimen/sp24"
-                        />
-
-                    <TextView
-                        android:id="@+id/subforos"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/subforos"
-                        android:layout_weight="1"
-                        android:textSize="@dimen/sp16"
-                        android:textStyle="bold"
-                        android:textAppearance="?attr/textAppearanceBody2"
-                        android:textColor="@color/RojoAcento"
-                        android:gravity="end" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/descripcion"
-                    android:layout_marginBottom="4dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dp16"
-                    android:layout_marginRight="@dimen/dp8"
-                    android:text="@string/desc_tarjeta"
-                    android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="?android:attr/textColorSecondary"
-                    />
-
-            </LinearLayout>
-
-        </LinearLayout>
+        </RelativeLayout>
 
     </LinearLayout>
 

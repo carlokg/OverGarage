@@ -20,4 +20,11 @@
     <string name="title">Título</string>
     <string name="subforos">%1$s Subforos</string>
     <string name="desc_tarjeta">Descripción</string>
+    <string name="title_mec">Mecánica</string>
+    <string name="subforos_mec">%1$s Subforos</string>
+    <string name="desc_mec">Todo lo relacionado con la mecánica</string>
+    <string name="img_tarjeta_mec">imgMecanica</string>
+    <string name="img_tarjeta_Electronica">ImagenElectronica</string>
+    <string name="title_electronic">Electronica</string>
+    <string name="error_lectura">No se ha podido leer el dato</string>
 </resources>
