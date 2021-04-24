@@ -5,4 +5,8 @@
     <dimen name="dp16">16dp</dimen>
     <dimen name="dp160">160dp</dimen>
     <dimen name="dp152">152dp</dimen>
+    <dimen name="dp96">96dp</dimen>
+    <dimen name="sp16">16sp</dimen>
+    <dimen name="sp24">24sp</dimen>
+    <dimen name="dp8">8dp</dimen>
 </resources>
