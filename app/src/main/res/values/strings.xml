@@ -14,4 +14,9 @@
     <string name="btn_login">Login</string>
     <string name="btn_regis">Registrarse</string>
     <string name="explora">Explora</string>
+    <string name="no_data">Debe introducir todos los datos</string>
+    <string name="msj_no_accede">No se ha podido acceder</string>
+    <string name="msj_pw_iguales">Las contraseñas introducidas no coinciden</string>
+    <string name="msj_registrado">Usuario registrado</string>
+    <string name="msj_no_registrado">No se ha podido registrar el usuario</string>
 </resources>
