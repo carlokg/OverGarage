@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             Fragment selectedFragment = null;
             switch (item.getItemId()) {
                 case R.id.explora:
-                    //selectedFragment = new ExploraFragment();
+                    selectedFragment = new ExploraFragment();
                     break;
                 case R.id.social:
                     //selectedFragment = new SocialFragment();
