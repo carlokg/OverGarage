@@ -1,6 +1,7 @@
 package com.car_pa_ra.overgarage;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.car_pa_ra.overgarage.model.Usuario;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -73,13 +75,10 @@ public class RegistroActivity extends AppCompatActivity {
         final String sTaller = etTaller.getEditText().getText().toString().trim();
 
         if(sNomUser.isEmpty() || sEmail.isEmpty() || sPass.isEmpty() || sPass.isEmpty() ||
-                sPass2.isEmpty() || sCiu.isEmpty() || sTaller.isEmpty() || selectedUri == null){
+                sPass2.isEmpty() || sCiu.isEmpty() || sTaller.isEmpty() || selectedUri == null) {
 
-                    Toast.makeText(this, R.string.no_data, Toast.LENGTH_SHORT).show();
-        } else if(!etPass.equals(etPass2)){
-            Toast.makeText(RegistroActivity.this, R.string.msj_pw_iguales,
-                    Toast.LENGTH_SHORT).show();
-        } else {
+            Toast.makeText(this, R.string.no_data, Toast.LENGTH_SHORT).show();
+        }else if(etPass.equals(etPass2)){
             fba.createUserWithEmailAndPassword(sEmail, sPass)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -125,6 +124,13 @@ public class RegistroActivity extends AppCompatActivity {
                                                 + "\n" + task.getException().getMessage(),
                                         Toast.LENGTH_SHORT).show();
                             } } });
+
+        } else {
+
+            Toast.makeText(RegistroActivity.this,
+                    R.string.msj_pw_iguales,
+                    Toast.LENGTH_SHORT).show();
+
         }
     }
 
@@ -140,6 +146,20 @@ public class RegistroActivity extends AppCompatActivity {
         intent.putExtra(Intent.CATEGORY_APP_GALLERY, true);
         startActivityForResult(Intent.createChooser(intent,
                 "abriendo galeria"), RC_PHOTO_ADJ);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RC_PHOTO_ADJ && resultCode == RESULT_OK) {
+            selectedUri = data.getData();
+
+            Glide.with(imgLogin.getContext())
+                    .load(selectedUri)
+                    .circleCrop()
+                    .into(imgLogin);
+        }
     }
 }
 
