@@ -52,6 +52,8 @@ public class ExploraFragment extends Fragment {
         //TODO: ¡¡¡¡ PONER REFERENCIA BASE DE DATOS !!!!!
         dbRef = FirebaseDatabase.getInstance()
                 .getReference("datos/grupo");
+        dbRef.child("datos/grupo").child("sss");
+        dbRef.setValue("s");
 
         viewModel = ViewModelProviders.of((FragmentActivity) getActivity()).get(MyViewModel.class);
 
