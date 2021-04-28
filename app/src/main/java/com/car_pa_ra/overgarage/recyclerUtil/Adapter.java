@@ -25,14 +25,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.GrupoViewHolder>
         public ImageView imagen;
         public TextView titulo;
         public TextView descripcion;
-        public TextView subforos;
 
         public GrupoViewHolder(View v) {
             super(v);
             imagen =  v.findViewById(R.id.imagen);
             titulo =  v.findViewById(R.id.titulo);
             descripcion =  v.findViewById(R.id.descripcion);
-            subforos = v.findViewById(R.id.subforos);
         }
     }
 
@@ -56,7 +54,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.GrupoViewHolder>
                 .into(holder.imagen);
         holder.titulo.setText(items.get(position).getTitulo());
         holder.descripcion.setText(items.get(position).getDescripcion());
-        holder.subforos.setText(items.get(position).getSubforos());
     }
 
     public void setListener(View.OnClickListener listener){

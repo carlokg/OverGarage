@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "383157936528",
-    "firebase_url": "https://overgarage-default-rtdb.firebaseio.com",
-    "project_id": "overgarage",
-    "storage_bucket": "overgarage.appspot.com"
+    "project_number": "793453378447",
+    "project_id": "overgarage-a54df",
+    "storage_bucket": "overgarage-a54df.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:383157936528:android:738b85b1297393a395d315",
+        "mobilesdk_app_id": "1:793453378447:android:b42c8b21565878bf9069fa",
         "android_client_info": {
           "package_name": "com.car_pa_ra.overgarage"
         }
       },
       "oauth_client": [
         {
-          "client_id": "383157936528-qek7a9pl667hovioomrmmltke0nmd6o9.apps.googleusercontent.com",
+          "client_id": "793453378447-o5jqkq6glcks1lc9bsmjvo0u9jooanfe.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyABlg81JYJ5HoJJbTrRl9B6fL6-4AkmpCk"
+          "current_key": "AIzaSyBfTh6GIAj2RUhLGj8EfxTxSzKgn7ja1bY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "383157936528-qek7a9pl667hovioomrmmltke0nmd6o9.apps.googleusercontent.com",
+              "client_id": "793453378447-o5jqkq6glcks1lc9bsmjvo0u9jooanfe.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
