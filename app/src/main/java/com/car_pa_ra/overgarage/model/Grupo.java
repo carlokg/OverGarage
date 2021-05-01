@@ -4,6 +4,7 @@ public class Grupo {
     private String imagen;
     private String titulo;
     private String descripcion;
+    private String numCategorias;
 
     public Grupo() {
     }
@@ -12,6 +13,10 @@ public class Grupo {
         this.imagen = imagen;
         this.titulo = titulo;
         this.descripcion = descripcion;
+    }
+
+    public String getNumCategorias() {
+        return numCategorias;
     }
 
     public String getImagen() {
@@ -25,4 +30,5 @@ public class Grupo {
     public String getDescripcion() {
         return descripcion;
     }
+
 }
