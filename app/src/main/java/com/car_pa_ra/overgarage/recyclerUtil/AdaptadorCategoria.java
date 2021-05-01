@@ -8,62 +8,57 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.car_pa_ra.overgarage.R;
-import com.car_pa_ra.overgarage.model.Grupo;
+import com.car_pa_ra.overgarage.model.Categoria;
 
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.GrupoViewHolder>
+public class AdaptadorCategoria extends RecyclerView.Adapter<AdaptadorCategoria.CategoriaViewHolder>
         implements View.OnClickListener{
 
-    private List<Grupo> items;
+    private List<Categoria> items;
     private View.OnClickListener listener;
 
-    public class GrupoViewHolder extends RecyclerView.ViewHolder{
-
-        public ImageView imagen;
+    public class CategoriaViewHolder extends RecyclerView.ViewHolder {
+        public ImageView img;
         public TextView titulo;
         public TextView descripcion;
-        public TextView numCategorias;
 
-
-        public GrupoViewHolder(View v) {
+        public CategoriaViewHolder(View v) {
             super(v);
-            imagen =  v.findViewById(R.id.imagen);
-            titulo =  v.findViewById(R.id.titulo);
-            descripcion =  v.findViewById(R.id.descripcion);
-            numCategorias = v.findViewById(R.id.numCategorias);
+            img =  v.findViewById(R.id.imagenCard);
+            titulo =  v.findViewById(R.id.tituloCard);
+            descripcion =  v.findViewById(R.id.descripcionCard);
         }
     }
 
-    public Adapter(List<Grupo> items) {
+
+    public AdaptadorCategoria(List<Categoria> items) {
         this.items = items;
     }
 
     @Override
-    public GrupoViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public CategoriaViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.card, viewGroup, false);
+                .inflate(R.layout.categoria_foro_card, viewGroup, false);
 
-        v.setOnClickListener( listener );
-        return new GrupoViewHolder(v);
+        v.setOnClickListener(listener);
+        return new CategoriaViewHolder(v);
     }
-
     @Override
-    public void onBindViewHolder(@NonNull Adapter.GrupoViewHolder holder, int position) {
-        Glide.with(holder.imagen)
+    public void onBindViewHolder(@NonNull CategoriaViewHolder holder, int position) {
+        Glide.with(holder.img)
                 .load(items.get(position).getImagen())
-                .into(holder.imagen);
+                .into(holder.img);
         holder.titulo.setText(items.get(position).getTitulo());
         holder.descripcion.setText(items.get(position).getDescripcion());
-        holder.numCategorias.setText(items.get(position).getNumCategorias());
     }
 
     public void setListener(View.OnClickListener listener){
         this.listener = listener;
     }
-
 
     @Override
     public void onClick(View v) {

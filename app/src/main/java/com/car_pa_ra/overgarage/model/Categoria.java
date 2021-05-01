@@ -2,23 +2,23 @@ package com.car_pa_ra.overgarage.model;
 
 public class Categoria {
 
-    private String nombre;
+    private String titulo;
     private String descripcion;
     private String grupo;
-    private String imagen;
+    private String img;
 
     public Categoria(){
     }
 
-    public Categoria(String nombre, String descripcion, String grupo, String imagen) {
-        this.nombre = nombre;
+    public Categoria(String titulo, String descripcion, String grupo, String imagen) {
+        this.titulo = titulo;
         this.descripcion = descripcion;
         this.grupo = grupo;
-        this.imagen = imagen;
+        this.img = imagen;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getTitulo() {
+        return titulo;
     }
 
     public String getDescripcion() {
@@ -30,6 +30,6 @@ public class Categoria {
     }
 
     public String getImagen() {
-        return imagen;
+        return img;
     }
 }
