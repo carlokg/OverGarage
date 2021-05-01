@@ -4,22 +4,17 @@
     <item
         android:id="@+id/explora"
         android:title="@string/explora"
-        />
-    <item
-        android:id="@+id/social"
-        android:title="Item 1"
+        android:icon="@drawable/ic_explora"
         />
     <item
         android:id="@+id/perfil"
-        android:title="Item 2"
+        android:title="Perfil"
+        android:icon="@drawable/ic_registro"
         />
     <item
-        android:id="@+id/ayuda"
-        android:title="Item 3"
-        />
-    <item
-        android:id="@+id/config"
-        android:title="Item 4"
+        android:id="@+id/ajustes"
+        android:title="Ajustes"
+        android:icon="@drawable/ic_ajustes"
         />
 
 </menu>
