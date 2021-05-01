@@ -18,7 +18,7 @@
     <string name="textoForo">Motor</string>
     <string name="txt_desc_foro">Corta descripción del grupo de foros</string>
     <string name="img_foro">Imagen de un foro</string>
-      <string name="img_tarjeta">imagen_tarjeta</string>
+    <string name="img_tarjeta">imagen_tarjeta</string>
     <string name="title">Título</string>
     <string name="subforos">%1$s Subforos</string>
     <string name="desc_tarjeta">Descripción</string>
@@ -34,4 +34,6 @@
     <string name="msj_pw_iguales">Las contraseñas introducidas no coinciden</string>
     <string name="msj_registrado">Usuario registrado</string>
     <string name="msj_no_registrado">No se ha podido registrar el usuario</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

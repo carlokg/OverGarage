@@ -1,12 +1,24 @@
 package com.car_pa_ra.overgarage.recyclerUtil;
 
+import androidx.lifecycle.ViewModel;
+
+import com.car_pa_ra.overgarage.model.Categoria;
 import com.car_pa_ra.overgarage.model.Grupo;
 import com.car_pa_ra.overgarage.model.Post;
 
-public class MyViewModel {
+public class MyViewModel extends ViewModel {
 
     public Post p;
     public Grupo g;
+    public Categoria c;
+
+    public Categoria getC() {
+        return c;
+    }
+
+    public void setC(Categoria c) {
+        this.c = c;
+    }
 
     public Grupo getG() {
         return g;

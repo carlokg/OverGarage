@@ -1,4 +1,4 @@
-package com.car_pa_ra.overgarage;
+package com.car_pa_ra.overgarage.recyclerUtil;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.car_pa_ra.overgarage.R;
 import com.car_pa_ra.overgarage.model.Post;
 
 import java.util.List;
@@ -29,9 +30,9 @@ public class AdaptadorForo extends RecyclerView.Adapter<AdaptadorForo.GrupoViewH
         public GrupoViewHolder(View v) {
             super(v);
 
-            imagenForo =  v.findViewById(R.id.imagenForo);
-            tituloForo =  v.findViewById(R.id.tituloForo);
-            descripcionForo =  v.findViewById(R.id.descripcionForo);
+            imagenForo =  v.findViewById(R.id.imagenCard);
+            tituloForo =  v.findViewById(R.id.tituloCard);
+            descripcionForo =  v.findViewById(R.id.descripcionCard);
 
         }
     }
@@ -53,7 +54,7 @@ public class AdaptadorForo extends RecyclerView.Adapter<AdaptadorForo.GrupoViewH
     public AdaptadorForo.GrupoViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
 
         View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.cardforo, viewGroup, false);
+                .inflate(R.layout.categoria_foro_card, viewGroup, false);
 
         v.setOnClickListener( listener );
         return new GrupoViewHolder(v);

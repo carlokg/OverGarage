@@ -18,9 +18,8 @@
         android:orientation="horizontal"
         android:layout_margin="16dp"
         >
-
         <ImageView
-            android:id="@+id/imagenForo"
+            android:id="@+id/imagenCard"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:contentDescription="@string/img_foro"
@@ -35,7 +34,7 @@
             >
 
             <TextView
-                android:id="@+id/tituloForo"
+                android:id="@+id/tituloCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
@@ -45,7 +44,7 @@
                 android:layout_weight="1"/>
 
             <TextView
-                android:id="@+id/descripcionForo"
+                android:id="@+id/descripcionCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
