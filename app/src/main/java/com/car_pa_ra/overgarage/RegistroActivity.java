@@ -78,7 +78,7 @@ public class RegistroActivity extends AppCompatActivity {
                 sPass2.isEmpty() || sCiu.isEmpty() || sTaller.isEmpty() || selectedUri == null) {
 
             Toast.makeText(this, R.string.no_data, Toast.LENGTH_SHORT).show();
-        }else if(etPass.equals(etPass2)){
+        }else if(sPass.equals(sPass2)){
             fba.createUserWithEmailAndPassword(sEmail, sPass)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override

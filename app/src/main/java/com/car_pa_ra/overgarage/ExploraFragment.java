@@ -127,7 +127,6 @@ public class ExploraFragment extends Fragment {
     public void onPause() {
         super.onPause();
         removeListener();
-
     }
 
     private void removeListener() {

@@ -18,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, new ExploraFragment())
+                .addToBackStack(null)
+                .commit();
 
     }
 
