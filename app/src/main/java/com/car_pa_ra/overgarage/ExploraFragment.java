@@ -9,14 +9,14 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.car_pa_ra.overgarage.model.Grupo;
-import com.car_pa_ra.overgarage.recyclerUtil.Adapter;
+import com.car_pa_ra.overgarage.recyclerUtil.AdaptadorGrupos;
 import com.car_pa_ra.overgarage.recyclerUtil.MyViewModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public class ExploraFragment extends Fragment {
 
     private RecyclerView recycler;
-    private Adapter adapter;
+    private AdaptadorGrupos adaptadorGrupos;
     private RecyclerView.LayoutManager llm;
 
     DatabaseReference dbRef;
@@ -46,7 +46,6 @@ public class ExploraFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
     }
 
     @Override
@@ -61,7 +60,7 @@ public class ExploraFragment extends Fragment {
         recycler.setHasFixedSize(true);
 
         lGrupos = new ArrayList<>();
-        //viewModel = ViewModelProviders.of((FragmentActivity) getActivity()).get( MyViewModel.class);
+        viewModel = ViewModelProviders.of((FragmentActivity) getActivity()).get(MyViewModel.class);
 
 
         return view;
@@ -70,22 +69,21 @@ public class ExploraFragment extends Fragment {
     private void cargarListaGrupos() {
         llm = new LinearLayoutManager(getContext());
         recycler.setLayoutManager(llm);
-        Log.d("INFO-G: ", String.valueOf(lGrupos.size()));
-        adapter = new Adapter(lGrupos);
-        /*adapter.setListener( new View.OnClickListener() {
+        adaptadorGrupos = new AdaptadorGrupos(lGrupos);
+        adaptadorGrupos.setListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int gNum = recycler.getChildAdapterPosition( v);
-                Grupo g = lGrupos.get( gNum );
-                viewModel.setG( g );
+                int gNum = recycler.getChildAdapterPosition(v);
+                Grupo g = lGrupos.get(gNum);
+                viewModel.setG(g);
                 getFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.fragment_container, new InfoGrupoFragment())
+                        .replace(R.id.fragment_container, new CategoriaFragment())
                         .addToBackStack(null)
                         .commit();
             }
-        } );*/
-        recycler.setAdapter(adapter);
+        } );
+        recycler.setAdapter(adaptadorGrupos);
     }
 
     @Override
@@ -100,12 +98,11 @@ public class ExploraFragment extends Fragment {
             vel = new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    Log.d("INFO-addLis: ", "In IF");
                     Grupo g;
                     lGrupos.clear();
                     for (DataSnapshot dss: dataSnapshot.getChildren()) {
-                            g = dss.getValue(Grupo.class);
-                            lGrupos.add(g);
+                        g = dss.getValue(Grupo.class);
+                        lGrupos.add(g);
                     }
                     cargarListaGrupos();
                 }
