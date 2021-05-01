@@ -1,6 +1,5 @@
 package com.car_pa_ra.overgarage;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,10 +16,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.car_pa_ra.overgarage.model.Grupo;
-import com.car_pa_ra.overgarage.model.MyViewModel;
 import com.car_pa_ra.overgarage.recyclerUtil.Adapter;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.auth.FirebaseAuth;
+import com.car_pa_ra.overgarage.recyclerUtil.MyViewModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -64,7 +61,7 @@ public class ExploraFragment extends Fragment {
         recycler.setHasFixedSize(true);
 
         lGrupos = new ArrayList<>();
-        viewModel = ViewModelProviders.of((FragmentActivity) getActivity()).get( MyViewModel.class);
+        //viewModel = ViewModelProviders.of((FragmentActivity) getActivity()).get( MyViewModel.class);
 
 
         return view;

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,6 +16,9 @@ import android.widget.Toast;
 
 import com.car_pa_ra.overgarage.model.Post;
 import com.car_pa_ra.overgarage.recyclerUtil.MyViewModel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -43,10 +47,10 @@ public class ForosFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_foros, container, false);
 
-        /*dbRef = FirebaseDatabase.getInstance()
-                .getReference("");*/
+        dbRef = FirebaseDatabase.getInstance()
+                .getReference("datos/grupos/categorias/post");
 
-        viewModel = ViewModelProviders.of((FragmentActivity) getActivity()).get(MyViewModel.class);
+        //viewModel = ViewModelProviders.of((FragmentActivity) getActivity()).get(MyViewModel.class);
 
         recycler = view.findViewById(R.id.rvForo);
         recycler.setHasFixedSize(true);
@@ -70,7 +74,8 @@ public class ForosFragment extends Fragment {
                 viewModel.setP( p );
                 getFragmentManager()
                         .beginTransaction()
-                        //TODO cargar post .replace(R.id.fragment_container, new InfoGrupoFragment())
+                        //TODO cargar post
+                        // .replace(R.id.fragment_container, new InfoGrupoFragment())
                         .addToBackStack(null)
                         .commit();
             }
@@ -109,13 +114,10 @@ public class ForosFragment extends Fragment {
         }*/
     }
 
-
-
     @Override
     public void onPause() {
         super.onPause();
         removeListener();
-
     }
 
     private void removeListener() {
