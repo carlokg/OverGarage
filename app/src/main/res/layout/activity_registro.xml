@@ -20,7 +20,7 @@
             android:layout_height="@dimen/dp104"
             android:layout_marginTop="@dimen/dp24"
             android:contentDescription="@string/foto_login"
-            app:srcCompat="@drawable/ic_image2"
+            app:srcCompat="@drawable/ic_registro"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -148,8 +148,10 @@
             android:text="@string/btn_registro"
             app:layout_constraintTop_toBottomOf="@id/etTaller"
             android:layout_margin="@dimen/dp16"
-            android:onClick="btnRegistrarse">
+            android:onClick="btnRegistrarse"
+            style="@style/HidraButton">
         </com.google.android.material.button.MaterialButton>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
