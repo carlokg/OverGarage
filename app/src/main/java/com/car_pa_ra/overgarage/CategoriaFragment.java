@@ -35,6 +35,7 @@ public class CategoriaFragment extends Fragment {
     private AdaptadorCategoria adaptadorCategoria;
     private RecyclerView.LayoutManager llm;
 
+    Grupo g;
     DatabaseReference dbRef;
     ValueEventListener vel = null;
 
@@ -57,14 +58,18 @@ public class CategoriaFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_categoria, container, false);
 
+
         dbRef = FirebaseDatabase.getInstance()
-                .getReference("datos/categorias");
+                .getReference("datos/categorias/");
 
         recycler = view.findViewById(R.id.rvCategoria);
         recycler.setHasFixedSize(true);
 
         lCategoria = new ArrayList<>();
         viewModel = ViewModelProviders.of((FragmentActivity) getActivity()).get( MyViewModel.class);
+
+        g = viewModel.getG();
+
 
         return view;
     }
@@ -105,8 +110,10 @@ public class CategoriaFragment extends Fragment {
                     Categoria c;
                     lCategoria.clear();
                     for (DataSnapshot dss: dataSnapshot.getChildren()) {
-                        c = dss.getValue(Categoria.class);
-                        lCategoria.add(c);
+                        if(dss.getValue(Categoria.class).getGrupo() == g.getTitulo()) {
+                            c = dss.getValue(Categoria.class);
+                            lCategoria.add(c);
+                        }
                     }
                     cargarListaCategorias();
                 }

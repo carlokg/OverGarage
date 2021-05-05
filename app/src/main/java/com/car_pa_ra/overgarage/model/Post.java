@@ -5,6 +5,7 @@ public class Post {
     private String titulo;
     private String descripcion;
     private String imagen;
+    private  String categoria;
 
     public Post() {
     }
@@ -25,5 +26,9 @@ public class Post {
 
     public String getImagen() {
         return imagen;
+    }
+
+    public String getCategoria() {
+        return categoria;
     }
 }

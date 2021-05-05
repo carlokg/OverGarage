@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.car_pa_ra.overgarage.model.Categoria;
 import com.car_pa_ra.overgarage.model.Grupo;
 import com.car_pa_ra.overgarage.model.Post;
 import com.car_pa_ra.overgarage.recyclerUtil.AdaptadorForo;
@@ -33,6 +34,7 @@ public class ForosFragment extends Fragment {
     private RecyclerView.LayoutManager llm;
     DatabaseReference dbRef;
     ValueEventListener vel;
+    Categoria c;
 
     private MyViewModel viewModel;
 
@@ -56,6 +58,7 @@ public class ForosFragment extends Fragment {
 
         viewModel = ViewModelProviders.of((FragmentActivity) getActivity()).get(MyViewModel.class);
 
+        c = viewModel.getC();
         recycler = view.findViewById(R.id.rvForo);
         recycler.setHasFixedSize(true);
 
@@ -102,8 +105,10 @@ public class ForosFragment extends Fragment {
                     Post p;
                     lPost.clear();
                     for (DataSnapshot dss: dataSnapshot.getChildren()) {
-                        p = dss.getValue(Post.class);
-                        lPost.add(p);
+                        if(dss.getValue(Post.class).getCategoria() == c.getTitulo()) {
+                            p = dss.getValue(Post.class);
+                            lPost.add(p);
+                        }
                     }
                     cargarListaPost();
                 }
