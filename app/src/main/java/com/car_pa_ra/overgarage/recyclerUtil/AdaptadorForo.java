@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.car_pa_ra.overgarage.R;
 import com.car_pa_ra.overgarage.model.Post;
 
@@ -49,7 +50,6 @@ public class AdaptadorForo extends RecyclerView.Adapter<AdaptadorForo.GrupoViewH
         }
     }
 
-    @NonNull
     @Override
     public AdaptadorForo.GrupoViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
 
@@ -67,7 +67,9 @@ public class AdaptadorForo extends RecyclerView.Adapter<AdaptadorForo.GrupoViewH
 
     @Override
     public void onBindViewHolder(@NonNull AdaptadorForo.GrupoViewHolder holder, int position) {
-        //Glide.with(holder.imagenForo).load(items.get(position).getImagen()).into(holder.imagenForo);
+        Glide.with(holder.imagenForo)
+                .load(items.get(position).getImagen())
+                .into(holder.imagenForo);
         holder.tituloForo.setText(items.get(position).getTitulo());
         holder.descripcionForo.setText(items.get(position).getDescripcion());
     }

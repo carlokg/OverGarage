@@ -110,7 +110,7 @@ public class CategoriaFragment extends Fragment {
                     Categoria c;
                     lCategoria.clear();
                     for (DataSnapshot dss: dataSnapshot.getChildren()) {
-                        if(dss.getValue(Categoria.class).getGrupo() == g.getTitulo()) {
+                        if(dss.getValue(Categoria.class).getGrupo().equals(g.getTitulo())) {
                             c = dss.getValue(Categoria.class);
                             lCategoria.add(c);
                         }

@@ -105,7 +105,7 @@ public class ForosFragment extends Fragment {
                     Post p;
                     lPost.clear();
                     for (DataSnapshot dss: dataSnapshot.getChildren()) {
-                        if(dss.getValue(Post.class).getCategoria() == c.getTitulo()) {
+                        if(dss.getValue(Post.class).getCategoria().equals(c.getTitulo())) {
                             p = dss.getValue(Post.class);
                             lPost.add(p);
                         }

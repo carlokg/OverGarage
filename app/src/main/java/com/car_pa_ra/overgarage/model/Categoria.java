@@ -5,7 +5,7 @@ public class Categoria {
     private String titulo;
     private String descripcion;
     private String grupo;
-    private String img;
+    private String imagen;
 
     public Categoria(){
     }
@@ -14,7 +14,7 @@ public class Categoria {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.grupo = grupo;
-        this.img = imagen;
+        this.imagen = imagen;
     }
 
     public String getTitulo() {
@@ -30,6 +30,6 @@ public class Categoria {
     }
 
     public String getImagen() {
-        return img;
+        return imagen;
     }
 }
