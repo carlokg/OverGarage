@@ -12,8 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.car_pa_ra.overgarage.model.Categoria;
 import com.car_pa_ra.overgarage.model.Grupo;
 import com.car_pa_ra.overgarage.model.Post;
@@ -35,6 +38,10 @@ public class ForosFragment extends Fragment {
     DatabaseReference dbRef;
     ValueEventListener vel;
     Categoria c;
+
+    private TextView tvNomForo;
+    private TextView tvDescForo;
+    private ImageView imgForo;
 
     private MyViewModel viewModel;
 
@@ -61,6 +68,16 @@ public class ForosFragment extends Fragment {
         c = viewModel.getC();
         recycler = view.findViewById(R.id.rvForo);
         recycler.setHasFixedSize(true);
+
+        tvNomForo = view.findViewById(R.id.txtNombreForo);
+        tvDescForo = view.findViewById(R.id.txtDescForo);
+        imgForo = view.findViewById(R.id.imgForos);
+
+        tvNomForo.setText(c.getTitulo());
+        tvDescForo.setText(c.getDescripcion());
+        Glide.with(imgForo).load(c.getImagen()).into(imgForo);
+
+
 
         lPost = new ArrayList<>();
 

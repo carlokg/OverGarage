@@ -50,6 +50,7 @@ public class AdaptadorForo extends RecyclerView.Adapter<AdaptadorForo.GrupoViewH
         }
     }
 
+    @NonNull
     @Override
     public AdaptadorForo.GrupoViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
 
@@ -67,9 +68,7 @@ public class AdaptadorForo extends RecyclerView.Adapter<AdaptadorForo.GrupoViewH
 
     @Override
     public void onBindViewHolder(@NonNull AdaptadorForo.GrupoViewHolder holder, int position) {
-        Glide.with(holder.imagenForo)
-                .load(items.get(position).getImagen())
-                .into(holder.imagenForo);
+        Glide.with(holder.imagenForo).load(items.get(position).getImagen()).into(holder.imagenForo);
         holder.tituloForo.setText(items.get(position).getTitulo());
         holder.descripcionForo.setText(items.get(position).getDescripcion());
     }

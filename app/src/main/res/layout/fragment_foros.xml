@@ -31,7 +31,6 @@
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
                 android:textColor="@color/black"
-                android:text="@string/textoForo"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="30"/>
 
@@ -58,7 +57,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:text="@string/txt_desc_foro"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="16dp"/>
 
