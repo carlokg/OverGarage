@@ -82,7 +82,7 @@ public class ForosFragment extends Fragment {
                 getFragmentManager()
                         .beginTransaction()
                         //TODO cargar post
-                        // .replace(R.id.fragment_container, new InfoGrupoFragment())
+                        .replace(R.id.fragment_container, new PostFragment())
                         .addToBackStack(null)
                         .commit();
             }

@@ -18,4 +18,23 @@ public class Usuario {
         this.ciu = ciu;
         this.taller = taller;
     }
+
+    public String getImg() {
+        return img;
+    }
+    public String getuId() {
+        return uId;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public String getCiu() {
+        return ciu;
+    }
+    public String getTaller() {
+        return taller;
+    }
 }

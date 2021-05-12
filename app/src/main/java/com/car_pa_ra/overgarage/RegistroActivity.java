@@ -114,10 +114,10 @@ public class RegistroActivity extends AppCompatActivity {
                                     }
                                 });
                                 // ACCEDER A LA APLICACIÓN
-                                accederApp();
                                 Toast.makeText(RegistroActivity.this,
                                         R.string.msj_registrado,
                                         Toast.LENGTH_SHORT).show();
+                                accederApp();
                             } else {
                                 Toast.makeText(RegistroActivity.this,
                                         getString(R.string.msj_no_registrado)
