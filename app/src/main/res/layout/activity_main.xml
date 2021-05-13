@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/navbar"
+        app:itemIconTint="@color/RojoAcento"
+        app:itemTextColor="@color/RojoAcento"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <FrameLayout
