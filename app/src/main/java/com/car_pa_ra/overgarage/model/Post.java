@@ -6,7 +6,7 @@ public class Post {
     private String descripcion;
     private String imagen;
     private  String categoria;
-    private Usuario user;
+    private String userUid;
 
     public Post() {
     }
@@ -33,7 +33,7 @@ public class Post {
         return categoria;
     }
 
-    public Usuario getUser() {
-        return user;
+    public String getUserUid() {
+        return userUid;
     }
 }

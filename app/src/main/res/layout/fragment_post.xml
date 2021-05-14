@@ -38,8 +38,8 @@
             </LinearLayout>
             <ImageView
                 android:id="@+id/imgUser"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/dp104"
+                android:layout_height="@dimen/dp104"
                 ></ImageView>
         </LinearLayout>
 
@@ -49,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/llOut1"
             android:layout_marginTop="@dimen/dp24"
+            android:textSize="@dimen/sp16"
             >
 
         </TextView>

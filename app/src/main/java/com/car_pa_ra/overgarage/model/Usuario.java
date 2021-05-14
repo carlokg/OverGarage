@@ -9,6 +9,7 @@ public class Usuario {
     private String ciu;
     private String taller;
 
+    public  Usuario(){}
 
     public Usuario(String img, String uId, String nombre, String email, String ciu, String taller) {
         this.img = img;
