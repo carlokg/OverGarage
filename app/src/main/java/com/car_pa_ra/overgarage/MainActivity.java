@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnControlerFragmentListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_container, new ExploraFragment())
-                .addToBackStack(null)
-                .commit();
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ExploraFragment()).addToBackStack(null).commit();
 
     }
 
@@ -39,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                     //selectedFragment = new SocialFragment();
                     break;
                 case R.id.perfil:
-                    //selectedFragment = new PerfilFragment();
+                    selectedFragment = new PerfilFragment();
                     break;
             }
 
