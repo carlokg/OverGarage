@@ -31,11 +31,9 @@ public class PerfilFragment extends Fragment {
 
     ImageView imgUsuario;
     TextView tvUsername;
-    TextView tvNsocial;
     TextView tvCorreoUsuario;
     TextView tvLocalizacion;
     TextView tvTaller;
-
     LinearLayout llLocation;
     DatabaseReference dbRef;
     ValueEventListener vel;
@@ -62,7 +60,6 @@ public class PerfilFragment extends Fragment {
         //Glide.with(this).load(R.drawable.perfil).into(imgUsuario);
 
         tvUsername = view.findViewById(R.id.tvUsername);
-        tvNsocial = view.findViewById(R.id.tvNsocial);
         tvCorreoUsuario = view.findViewById(R.id.tvCorreoUsuario);
         tvLocalizacion = view.findViewById(R.id.tvLocalizacion);
         llLocation = view.findViewById(R.id.llLocation);
@@ -70,7 +67,7 @@ public class PerfilFragment extends Fragment {
         fba = FirebaseAuth.getInstance();
         userFb = fba.getCurrentUser();
 
-        dbRef = FirebaseDatabase.getInstance().getReference("datos/usuario");
+        dbRef = FirebaseDatabase.getInstance().getReference("datos/user");
 
         return view;
     }
@@ -94,6 +91,7 @@ public class PerfilFragment extends Fragment {
                     }
 
                     cargarUser();
+
                 }
 
                 @Override
