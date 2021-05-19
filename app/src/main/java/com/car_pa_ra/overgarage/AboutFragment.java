@@ -16,18 +16,13 @@ public class AboutFragment extends Fragment {
     ImageView imgp;
     ImageView imgc;
     ImageView imgr;
-
-
     public AboutFragment() {
         // Required empty public constructor
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,8 +36,6 @@ public class AboutFragment extends Fragment {
         //Glide.with(this).load(R.drawable.fotor).circleCrop().into(imgr);
         //Glide.with(this).load(R.drawable.fotoc).circleCrop().into(imgc);
         //Glide.with(this).load(R.drawable.fotop).circleCrop().into(imgp);
-
-
         return view;
     }
 }

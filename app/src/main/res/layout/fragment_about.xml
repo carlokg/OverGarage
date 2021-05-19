@@ -99,7 +99,7 @@
             android:layout_marginStart="@dimen/dp16"
             android:layout_marginEnd="@dimen/dp16"
             android:textSize="@dimen/sp16"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textColor="@color/grisOscuro2"
             android:text="@string/content_about_us"/>
 
