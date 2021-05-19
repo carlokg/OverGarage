@@ -67,6 +67,7 @@ public class AdaptadorPost extends RecyclerView.Adapter<AdaptadorPost.GrupoViewH
     public void onBindViewHolder(@NonNull AdaptadorPost.GrupoViewHolder holder, int position) {
         Glide.with(holder.imagenPost)
                 .load(items.get(position).getImg())
+                .circleCrop()
                 .into(holder.imagenPost);
         holder.descripcionPost.setText(items.get(position).getText());
 

@@ -8,6 +8,7 @@ public class Post {
     private String titulo;
     private String descripcion;
     private String imagen;
+    private String descPro;
     private String categoria;
     private String userUid;
     private Map<String,Response> responses;
@@ -43,5 +44,9 @@ public class Post {
 
     public Map<String,Response> getResponses() {
         return responses;
+    }
+
+    public String getDescPro() {
+        return descPro;
     }
 }

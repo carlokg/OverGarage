@@ -97,17 +97,20 @@ public class PostFragment extends Fragment {
                 .load(img)
                 .circleCrop()
                 .into(imgUser);
-        txtDesc.setText("Holaaalasaldadadalalafamtmafalfamfalamaflafmaflafmalfmalfmaf\nafojfwgagqqq");
+        txtDesc.setText(p.getDescPro());
         cargarResponse();
     }
 
     private void cargarResponse() {
         llm = new LinearLayoutManager(getContext());
         recycler.setLayoutManager(llm);
-        List<Response> lResponse = new ArrayList<>(p.getResponses().values());
-        adaptadorPost = new AdaptadorPost(lResponse);
 
-        recycler.setAdapter(adaptadorPost);
+        if(p.getResponses() != null){
+            List<Response> lResponse = new ArrayList<>(p.getResponses().values());
+            adaptadorPost = new AdaptadorPost(lResponse);
+            recycler.setAdapter(adaptadorPost);
+        }
+
 
     }
 

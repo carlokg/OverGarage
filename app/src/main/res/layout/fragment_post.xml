@@ -33,7 +33,7 @@
                     android:id="@+id/txtNomModel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp8">
+                    android:layout_marginTop="@dimen/dp4">
                 </TextView>
             </LinearLayout>
             <ImageView
@@ -50,6 +50,7 @@
             android:layout_below="@+id/llOut1"
             android:layout_marginTop="@dimen/dp24"
             android:textSize="@dimen/sp16"
+            android:textColor="@color/black"
             >
 
         </TextView>
@@ -58,7 +59,6 @@
             android:id="@+id/rvPost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbarStyle="outsideOverlay"
             android:scrollbars="vertical"
             android:layout_below="@+id/txtDesc"
             android:layout_marginTop="16dp"/>
