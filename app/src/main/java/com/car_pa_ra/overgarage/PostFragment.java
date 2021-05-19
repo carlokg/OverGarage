@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
@@ -18,8 +19,10 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.car_pa_ra.overgarage.model.Post;
+import com.car_pa_ra.overgarage.model.Response;
 import com.car_pa_ra.overgarage.model.Usuario;
 import com.car_pa_ra.overgarage.recyclerUtil.AdaptadorForo;
+import com.car_pa_ra.overgarage.recyclerUtil.AdaptadorPost;
 import com.car_pa_ra.overgarage.recyclerUtil.MyViewModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,6 +32,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class PostFragment extends Fragment {
@@ -42,6 +47,10 @@ public class PostFragment extends Fragment {
     TextView txtNomModel;
     ImageView imgUser;
     TextView txtDesc;
+
+    private RecyclerView recycler;
+    private AdaptadorPost adaptadorPost;
+    private RecyclerView.LayoutManager llm;
 
     DatabaseReference dbRefUser;
     ValueEventListener vel;
@@ -70,6 +79,9 @@ public class PostFragment extends Fragment {
         vModel = ViewModelProviders.of((FragmentActivity) getActivity()).get(MyViewModel.class);
         p = vModel.getP();
 
+        recycler = v.findViewById(R.id.rvPost);
+        recycler.setHasFixedSize(true);
+
         addListener();
 
 
@@ -86,6 +98,17 @@ public class PostFragment extends Fragment {
                 .circleCrop()
                 .into(imgUser);
         txtDesc.setText("Holaaalasaldadadalalafamtmafalfamfalamaflafmaflafmalfmalfmaf\nafojfwgagqqq");
+        cargarResponse();
+    }
+
+    private void cargarResponse() {
+        llm = new LinearLayoutManager(getContext());
+        recycler.setLayoutManager(llm);
+        List<Response> lResponse = new ArrayList<>(p.getResponses().values());
+        adaptadorPost = new AdaptadorPost(lResponse);
+
+        recycler.setAdapter(adaptadorPost);
+
     }
 
     private void addListener() {

@@ -54,5 +54,25 @@
 
         </TextView>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"
+            android:layout_below="@+id/txtDesc"
+            android:layout_marginTop="16dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rvPost"
+            android:layout_marginTop="@dimen/dp16"
+            style="@style/HidraButton"
+            android:text="Resoponder"
+            />
+
+
+
     </RelativeLayout>
 </FrameLayout>
