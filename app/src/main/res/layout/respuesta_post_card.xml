@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp8"
+    android:layout_marginBottom="@dimen/dp8"
+    android:clickable="false"
+    android:focusable="false"
+    app:cardElevation="@dimen/dp8"
+    app:cardCornerRadius="@dimen/dp4"
+    android:checkable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="@dimen/dp8"
+        android:layout_marginVertical="@dimen/dp16"
+        >
+        <ImageView
+            android:id="@+id/rPostImg"
+            android:layout_width="@dimen/dp64"
+            android:layout_height="@dimen/dp64"
+            android:contentDescription="@string/img_foro"
+            />
+
+        <TextView
+            android:id="@+id/textCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/textoForo"
+            android:layout_marginTop="@dimen/dp8"
+            android:layout_marginStart="@dimen/dp16"
+            android:textColor="@color/browser_actions_title_color"
+            android:textSize="@dimen/dp16" />
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,11 +1,16 @@
 package com.car_pa_ra.overgarage.model;
 
+import java.util.Map;
+
 public class Post {
 
     private String titulo;
     private String descripcion;
     private String imagen;
-    private  String categoria;
+    private String descPro;
+    private String categoria;
+    private String userUid;
+    private Map<String,Response> responses;
 
     public Post() {
     }
@@ -30,5 +35,17 @@ public class Post {
 
     public String getCategoria() {
         return categoria;
+    }
+
+    public String getUserUid() {
+        return userUid;
+    }
+
+    public Map<String,Response> getResponses() {
+        return responses;
+    }
+
+    public String getDescPro() {
+        return descPro;
     }
 }

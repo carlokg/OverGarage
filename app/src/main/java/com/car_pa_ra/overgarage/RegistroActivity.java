@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -108,16 +109,18 @@ public class RegistroActivity extends AppCompatActivity {
                                             Usuario u = new Usuario(downloadUri.toString(),
                                                     fbu.getUid(), sNomUser, sEmail,sCiu, sTaller );
 
+
                                             myRef.child(fbu.getUid()+"_"+sNomUser)
                                                     .setValue(u);
+                                            Log.d("UID: ", fbu.getUid()+"_"+sNomUser);
                                         }
                                     }
                                 });
                                 // ACCEDER A LA APLICACIÓN
-                                accederApp();
                                 Toast.makeText(RegistroActivity.this,
                                         R.string.msj_registrado,
                                         Toast.LENGTH_SHORT).show();
+                                accederApp();
                             } else {
                                 Toast.makeText(RegistroActivity.this,
                                         getString(R.string.msj_no_registrado)
