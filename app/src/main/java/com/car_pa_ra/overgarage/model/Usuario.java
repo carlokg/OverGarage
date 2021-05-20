@@ -9,6 +9,8 @@ public class Usuario {
     private String ciu;
     private String taller;
 
+    public Usuario() {
+    }
 
     public Usuario(String img, String uId, String nombre, String email, String ciu, String taller) {
         this.img = img;
@@ -17,5 +19,29 @@ public class Usuario {
         this.email = email;
         this.ciu = ciu;
         this.taller = taller;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public String getuId() {
+        return uId;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getCiu() {
+        return ciu;
+    }
+
+    public String getTaller() {
+        return taller;
     }
 }

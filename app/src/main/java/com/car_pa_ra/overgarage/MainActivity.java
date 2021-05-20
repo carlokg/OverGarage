@@ -13,7 +13,7 @@ import android.view.View;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnControlerFragmentListener{
 
     AlertDialog dialog;
     FirebaseAuth fba;
@@ -25,11 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_container, new ExploraFragment())
-                .addToBackStack(null)
-                .commit();
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ExploraFragment()).addToBackStack(null).commit();
 
     }
 
@@ -46,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                     showAlertDialogButtonClicked(MainActivity.this);
                     break;
                 case R.id.perfil:
-                    //selectedFragment = new PerfilFragment();
+                    selectedFragment = new PerfilFragment();
                     break;
             }
 
