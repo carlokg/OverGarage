@@ -1,6 +1,5 @@
 package com.car_pa_ra.overgarage.model;
 
-import java.util.List;
 import java.util.Map;
 
 public class Post {
