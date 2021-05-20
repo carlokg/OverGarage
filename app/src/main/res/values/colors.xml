@@ -7,5 +7,7 @@
     <color name="grisOscuro">#595959</color>
     <color name="grisOscuro2">#404040</color>
     <color name="RojoAcento">#8C0303</color>
+    <color name="colorExpandibleAjustes">#80FFFFFF</color>
+    <color name="colorFondo">#FFFFFF</color>
 
 </resources>

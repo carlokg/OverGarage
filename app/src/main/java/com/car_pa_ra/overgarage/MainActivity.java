@@ -1,15 +1,22 @@
 package com.car_pa_ra.overgarage;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
+
+    AlertDialog dialog;
+    FirebaseAuth fba;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                     selectedFragment = new ExploraFragment();
                     break;
                 case R.id.ajustes:
-                    //selectedFragment = new SocialFragment();
+                    showAlertDialogButtonClicked(MainActivity.this);
                     break;
                 case R.id.perfil:
                     //selectedFragment = new PerfilFragment();
@@ -57,9 +64,70 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    private void showAlertDialogButtonClicked(MainActivity mainActivity) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setView(getLayoutInflater().inflate(R.layout.expandable_ajustes,
+                null));
+
+
+        dialog = builder.create();
+        dialog.show();
+    }
+
     public void selectFrgment(String texto) {
 
-        //ESTE METODO ESTA POR VER SI LO DESARROLLAMOS, PORQUE LO HICIMOS PARA AJUSTES
+        Fragment selectedFragment = null;
 
+        switch (texto){
+            case "about":
+                selectedFragment = new AboutFragment();
+                break;
+            case "ayuda":
+                selectedFragment = new AyudaFragment();
+                break;
+            case "logout":
+                fba.signOut();
+                Intent i = new Intent(this, LoginActivity.class);
+                startActivity(i);
+                finish();
+                break;
+        }
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, selectedFragment)
+                .addToBackStack(null)
+                .commit();
     }
+
+    public void logOut(View view) {
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
+    }
+    public void aboutUs(View view) {
+        Fragment selectedFragment = new AboutFragment();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, selectedFragment)
+                .addToBackStack(null)
+                .commit();
+
+        dialog.dismiss();
+    }
+
+    public void ayuda(View view) {
+        Fragment selectedFragment = new AyudaFragment();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, selectedFragment)
+                .addToBackStack(null)
+                .commit();
+
+        dialog.dismiss();
+    }
+
 }

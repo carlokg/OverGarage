@@ -34,6 +34,29 @@
     <string name="msj_pw_iguales">Las contraseñas introducidas no coinciden</string>
     <string name="msj_registrado">Usuario registrado</string>
     <string name="msj_no_registrado">No se ha podido registrar el usuario</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_about">Sobre nosotros</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="btn_logout">Cerrar sesión</string>
+    <string name="txt_notificaciones">Notificaciones</string>
+    <string name="f_ayuda">Ayuda</string>
+    <string name="help">Términos de uso</string>
+    <string name="politica">Política de privacidad</string>
+    <string name="seguridad">Consejos de seguridad OverGarage</string>
+    <string name="frecuentes">Preguntas frecuentes</string>
+    <string name="normas">Normas de OverGarage</string>
+    <string name="twitter">OverGarage en Twitter</string>
+    <string name="version">Versión app:</string>
+    <string name="version_n">2.7</string>
+    <string name="pablo">Pablo</string>
+    <string name="carlos">Carlos</string>
+    <string name="raul">Raúl</string>
+    <string name="content_about_us">Somos Carlos García, Pablo López,  y Raúl García, estudiantes de
+        la Universidad Europea en el campus de Alcobendas. Hemos desarrollado esta aplicación como
+        proyecto de fin de ciclo, para el ciclo formativo de Desarrollo de Aplicaciones Multiplataforma,
+        en el curso de 2019/2021. Ha sido una experiencia genial y estamos muy contentos con los
+        resultados obtenidos en la aplicación, tanto a nivel funcional como de diseño.
+        Pensamos que con algún retoque podría ser una aplicación muy útil.
+        Agradecer a los profesores Félix De Pablo, Ernesto Ramiro y Pilar Martín la formación
+        y ayuda prestada para que este proyecto haya sido posible.</string>
 </resources>

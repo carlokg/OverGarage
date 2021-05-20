@@ -1,0 +1,129 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorExpandibleAjustes">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:onClick="aboutUs">
+
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/sp16"
+                    app:srcCompat="@drawable/ic_aboutus"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_about"
+                    android:textSize="@dimen/sp24"
+                    android:layout_marginStart="@dimen/dp24"
+                    android:textColor="@color/RojoAcento"
+                    />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp16"
+            android:onClick="ayuda">
+
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/sp16"
+                app:srcCompat="@drawable/ic_ayuda"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/ayuda"
+                android:textSize="@dimen/sp24"
+                android:layout_marginStart="@dimen/dp24"
+                android:textColor="@color/RojoAcento"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp16"
+            android:onClick="logOut">
+
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/sp16"
+                app:srcCompat="@drawable/ic_logout"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/btn_logout"
+                android:textSize="@dimen/sp24"
+                android:layout_marginStart="@dimen/dp24"
+                android:textColor="@color/RojoAcento"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp16">
+
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/sp16"
+                app:srcCompat="@drawable/ic_notificaciones"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/txt_notificaciones"
+                android:textSize="@dimen/sp24"
+                android:layout_marginStart="@dimen/dp24"
+                android:textColor="@color/RojoAcento"
+                />
+
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
