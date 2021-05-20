@@ -3,7 +3,6 @@ package com.car_pa_ra.overgarage.model;
 import java.util.Map;
 
 public class Post {
-
     private String titulo;
     private String descripcion;
     private String imagen;
