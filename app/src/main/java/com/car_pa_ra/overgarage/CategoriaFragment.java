@@ -69,8 +69,6 @@ public class CategoriaFragment extends Fragment {
         viewModel = ViewModelProviders.of((FragmentActivity) getActivity()).get( MyViewModel.class);
 
         g = viewModel.getG();
-
-
         return view;
     }
 
