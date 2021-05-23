@@ -12,10 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.car_pa_ra.overgarage.model.Categoria;
-import com.car_pa_ra.overgarage.model.Grupo;
 import com.car_pa_ra.overgarage.model.Post;
 import com.car_pa_ra.overgarage.recyclerUtil.AdaptadorForo;
 import com.car_pa_ra.overgarage.recyclerUtil.MyViewModel;
@@ -32,6 +34,9 @@ public class ForosFragment extends Fragment {
     private RecyclerView recycler;
     private AdaptadorForo adaptadorForo;
     private RecyclerView.LayoutManager llm;
+    private TextView txtNombreForo;
+    private TextView txtDescForo;
+    private ImageView imgForos;
     DatabaseReference dbRef;
     ValueEventListener vel;
     Categoria c;
@@ -57,9 +62,19 @@ public class ForosFragment extends Fragment {
                 .getReference("datos/post");
 
         viewModel = ViewModelProviders.of((FragmentActivity) getActivity()).get(MyViewModel.class);
-
-        c = viewModel.getC();
         recycler = view.findViewById(R.id.rvForo);
+        txtDescForo = view.findViewById(R.id.txtDescForo);
+        txtNombreForo = view.findViewById(R.id.txtNombreForo);
+        imgForos = view.findViewById(R.id.imgForos);
+        c = viewModel.getC();
+
+        Glide.with(imgForos)
+                .load(c.getImagen())
+                .into(imgForos);
+
+        txtNombreForo.setText(c.getTitulo());
+        txtDescForo.setText(c.getDescripcion());
+
         recycler.setHasFixedSize(true);
 
         lPost = new ArrayList<>();

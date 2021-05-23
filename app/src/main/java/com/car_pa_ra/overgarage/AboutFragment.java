@@ -30,12 +30,12 @@ public class AboutFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_about, container, false);
 
         imgr = view.findViewById(R.id.img3);
-        imgc = view.findViewById(R.id.img2);
-        imgp = view.findViewById(R.id.img1);
+        imgc = view.findViewById(R.id.img1);
+        imgp = view.findViewById(R.id.img2);
 
-        //Glide.with(this).load(R.drawable.fotor).circleCrop().into(imgr);
-        //Glide.with(this).load(R.drawable.fotoc).circleCrop().into(imgc);
-        //Glide.with(this).load(R.drawable.fotop).circleCrop().into(imgp);
+        Glide.with(this).load(R.drawable.foto_c).circleCrop().into(imgc);
+        Glide.with(this).load(R.drawable.foto_p).circleCrop().into(imgp);
+        Glide.with(this).load(R.drawable.foto_r).circleCrop().into(imgr);
         return view;
     }
 }
