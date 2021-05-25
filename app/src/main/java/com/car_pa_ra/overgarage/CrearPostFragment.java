@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -102,6 +103,8 @@ public class CrearPostFragment extends Fragment {
         } else{
             Post p = new Post(titStr,modStr,img ,descStr,cat,userId,
                     modStr+"_"+userId.substring(0,4));
+
+            Log.d("Post:", p.toString());
             myRef.child(modStr+"_"+userId.substring(0,5))
                     .setValue(p);
 

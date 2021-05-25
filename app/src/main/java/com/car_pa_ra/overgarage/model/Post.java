@@ -57,4 +57,17 @@ public class Post {
     public String getIdPost() {
         return idPost;
     }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "titulo='" + titulo + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", imagen='" + imagen + '\'' +
+                ", descPro='" + descPro + '\'' +
+                ", categoria='" + categoria + '\'' +
+                ", userUid='" + userUid + '\'' +
+                ", idPost='" + idPost + '\'' +
+                '}';
+    }
 }
