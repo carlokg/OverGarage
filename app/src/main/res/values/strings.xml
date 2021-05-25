@@ -37,4 +37,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="crear_post">CREAR POST</string>
+    <string name="et_titulo">Titulo</string>
+    <string name="et_desc_post">Descripcion del problema</string>
+    <string name="et_modelo">Modelo del coche</string>
 </resources>

@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel;
 import com.car_pa_ra.overgarage.model.Categoria;
 import com.car_pa_ra.overgarage.model.Grupo;
 import com.car_pa_ra.overgarage.model.Post;
+import com.car_pa_ra.overgarage.model.Usuario;
 
 public class MyViewModel extends ViewModel {
 

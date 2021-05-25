@@ -11,14 +11,19 @@ public class Post {
     private String categoria;
     private String userUid;
     private Map<String,Response> responses;
+    private String idPost;
 
     public Post() {
     }
 
-    public Post(String titulo, String descripcion, String imagen) {
+    public Post(String titulo, String descripcion, String imagen, String descPro, String categoria, String userUid, String idPost) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.imagen = imagen;
+        this.descPro = descPro;
+        this.categoria = categoria;
+        this.userUid = userUid;
+        this.idPost = idPost;
     }
 
     public String getTitulo() {
@@ -47,5 +52,9 @@ public class Post {
 
     public String getDescPro() {
         return descPro;
+    }
+
+    public String getIdPost() {
+        return idPost;
     }
 }
