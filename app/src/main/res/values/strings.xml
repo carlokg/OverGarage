@@ -40,4 +40,6 @@
     <string name="et_titulo">Titulo</string>
     <string name="et_desc_post">Descripcion del problema</string>
     <string name="et_modelo">Modelo del coche</string>
+    <string name="et_responde">Escribe tu respuesta</string>
+    <string name="warn_no_response">Debe introducir una respuesta</string>
 </resources>

@@ -86,15 +86,9 @@
             android:id="@+id/ibGoogle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_edit"
+            app:srcCompat="@drawable/ic_google"
+            android:background="@color/white"
             />
-
-        <ImageButton
-            android:id="@+id/ibFacebook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="64dp"
-            app:srcCompat="@android:drawable/ic_menu_info_details" />
 
 
     </LinearLayout>

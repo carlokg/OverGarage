@@ -25,12 +25,14 @@ public class AdaptadorPost extends RecyclerView.Adapter<AdaptadorPost.GrupoViewH
     public static class GrupoViewHolder extends RecyclerView.ViewHolder{
 
         public ImageView imagenPost;
+        public  TextView userNom;
         public TextView descripcionPost;
 
         public GrupoViewHolder(View v) {
             super(v);
 
             imagenPost =  v.findViewById(R.id.rPostImg);
+            userNom = v.findViewById(R.id.tvUserNom);
             descripcionPost =  v.findViewById(R.id.textCard);
 
         }
@@ -69,6 +71,7 @@ public class AdaptadorPost extends RecyclerView.Adapter<AdaptadorPost.GrupoViewH
                 .load(items.get(position).getImg())
                 .circleCrop()
                 .into(holder.imagenPost);
+        holder.userNom.setText(items.get(position).getText());
         holder.descripcionPost.setText(items.get(position).getText());
 
     }

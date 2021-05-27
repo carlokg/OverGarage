@@ -1,4 +1,4 @@
-package com.car_pa_ra.overgarage.model;
+ package com.car_pa_ra.overgarage.model;
 
 import java.util.Map;
 
@@ -56,6 +56,10 @@ public class Post {
 
     public String getIdPost() {
         return idPost;
+    }
+
+    public void setResponses(Map<String, Response> responses) {
+        this.responses = responses;
     }
 
     @Override

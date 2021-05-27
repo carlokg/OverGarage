@@ -2,6 +2,7 @@ package com.car_pa_ra.overgarage;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.car_pa_ra.overgarage.model.Categoria;
 import com.car_pa_ra.overgarage.model.Post;
@@ -21,8 +23,11 @@ import com.car_pa_ra.overgarage.recyclerUtil.MyViewModel;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -46,6 +51,8 @@ public class CrearPostFragment extends Fragment {
     String cat;
 
     DatabaseReference myRef;
+    ValueEventListener vel;
+    Usuario u;
 
     public CrearPostFragment() {
     }
@@ -66,7 +73,7 @@ public class CrearPostFragment extends Fragment {
         etModelo = v.findViewById(R.id.etModelo);
         btnResponder = v.findViewById(R.id.btnResp);
 
-        myRef = FirebaseDatabase.getInstance().getReference("datos/post");
+        myRef = FirebaseDatabase.getInstance().getReference("datos");
         vModel = ViewModelProviders.of((FragmentActivity) getActivity()).get(MyViewModel.class);
         fba = FirebaseAuth.getInstance();
         fbu = fba.getCurrentUser();
@@ -87,10 +94,13 @@ public class CrearPostFragment extends Fragment {
         return v;
     }
 
+
     private void volverAForo() {
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, new ForosFragment()).commit();
+                .replace(R.id.fragment_container, new ForosFragment())
+                .addToBackStack(null)
+                .commit();
     }
 
     private void crearPost() {
@@ -100,12 +110,13 @@ public class CrearPostFragment extends Fragment {
 
         if(titStr.isEmpty()||descStr.isEmpty()||modStr.isEmpty()){
 
+
         } else{
             Post p = new Post(titStr,modStr,img ,descStr,cat,userId,
-                    modStr+"_"+userId.substring(0,4));
+                    modStr+"_"+userId.substring(0,5));
 
             Log.d("Post:", p.toString());
-            myRef.child(modStr+"_"+userId.substring(0,5))
+            myRef.child("post").child(modStr+"_"+userId.substring(0,5))
                     .setValue(p);
 
         }

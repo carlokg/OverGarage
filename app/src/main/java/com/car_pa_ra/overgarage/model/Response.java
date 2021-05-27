@@ -5,13 +5,15 @@ import java.util.ArrayList;
 public class Response {
 
     private String text;
+    private String userNom;
     private String img;
 
     public Response() {
     }
 
-    public Response(String text, String img) {
+    public Response(String text, String img, String userNom) {
         this.text = text;
+        this.userNom = userNom;
         this.img = img;
     }
 
@@ -20,5 +22,8 @@ public class Response {
     }
     public String getImg() {
         return img;
+    }
+    public String getUserNom() {
+        return userNom;
     }
 }
