@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ForosFragment">
 
     <LinearLayout
@@ -44,6 +45,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/dp24"
             android:layout_marginTop="@dimen/dp24"
+            android:src="@drawable/ic_add"
+            app:tint="@color/white"
             android:backgroundTint="@color/RojoAcento"/>
 
     </LinearLayout>

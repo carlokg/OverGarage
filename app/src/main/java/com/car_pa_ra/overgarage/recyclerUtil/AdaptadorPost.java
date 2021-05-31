@@ -71,7 +71,7 @@ public class AdaptadorPost extends RecyclerView.Adapter<AdaptadorPost.GrupoViewH
                 .load(items.get(position).getImg())
                 .circleCrop()
                 .into(holder.imagenPost);
-        holder.userNom.setText(items.get(position).getText());
+        holder.userNom.setText(items.get(position).getUserNom());
         holder.descripcionPost.setText(items.get(position).getText());
 
     }
