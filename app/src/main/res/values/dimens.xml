@@ -30,4 +30,5 @@
     <dimen name="dp64">64dp</dimen>
     <dimen name="dp144">144dp</dimen>
     <dimen name="dp168">168dp</dimen>
+    <dimen name="dp192">192dp</dimen>
 </resources>
