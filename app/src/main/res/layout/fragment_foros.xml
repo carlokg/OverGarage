@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ForosFragment">
 
     <LinearLayout
@@ -35,14 +36,17 @@
                 android:layout_weight="30"/>
 
 
-        <ImageView
-            android:id="@+id/imganiadirForo"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_gravity=""
-            android:layout_margin="16dp"
-            android:contentDescription="@string/foto_foros"
-            android:layout_weight="1"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabCrearPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/dp24"
+            android:layout_marginTop="@dimen/dp24"
+            android:src="@drawable/ic_add"
+            app:tint="@color/white"
+            android:backgroundTint="@color/RojoAcento"/>
 
     </LinearLayout>
 

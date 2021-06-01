@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +23,7 @@ import com.car_pa_ra.overgarage.model.Grupo;
 import com.car_pa_ra.overgarage.model.Post;
 import com.car_pa_ra.overgarage.recyclerUtil.AdaptadorForo;
 import com.car_pa_ra.overgarage.recyclerUtil.MyViewModel;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -44,6 +46,7 @@ public class ForosFragment extends Fragment {
     private ImageView imgForo;
 
     private MyViewModel viewModel;
+    FloatingActionButton fabCrear;
 
     private ArrayList<Post> lPost;
 
@@ -79,7 +82,19 @@ public class ForosFragment extends Fragment {
 
 
 
+        fabCrear = view.findViewById(R.id.fabCrearPost);
+
         lPost = new ArrayList<>();
+
+        fabCrear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .addToBackStack(null)
+                        .replace(R.id.fragment_container, new CrearPostFragment()).commit();
+            }
+        });
 
         return view;
 
@@ -121,7 +136,7 @@ public class ForosFragment extends Fragment {
                     Post p;
                     lPost.clear();
                     for (DataSnapshot dss: dataSnapshot.getChildren()) {
-                        if(dss.getValue(Post.class).getCategoria().equals(c.getTitulo())) {
+                        if(c.getTitulo().equals(dss.getValue(Post.class).getCategoria())) {
                             p = dss.getValue(Post.class);
                             lPost.add(p);
                         }

@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,8 +20,12 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private final String googleUrl ="https://accounts.google.com/signin/v2/identifier?hl=es&" +
+            "continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&flowName=GlifWebSignIn&" +
+            "flowEntry=AddSession";
     TextInputLayout etEmail;
     TextInputLayout etPass;
+    ImageButton ibGoogle;
     private FirebaseAuth fba;
     private FirebaseUser fbu;
 
@@ -30,6 +36,16 @@ public class LoginActivity extends AppCompatActivity {
 
         etEmail = findViewById(R.id.etEmail);
         etPass = findViewById(R.id.etPass);
+        ibGoogle = findViewById(R.id.ibGoogle);
+
+        ibGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse(googleUrl);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
         fba = FirebaseAuth.getInstance();
         fbu = fba.getCurrentUser();
 

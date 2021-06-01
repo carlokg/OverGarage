@@ -34,6 +34,7 @@
     <string name="msj_pw_iguales">Las contraseñas introducidas no coinciden</string>
     <string name="msj_registrado">Usuario registrado</string>
     <string name="msj_no_registrado">No se ha podido registrar el usuario</string>
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btn_about">Sobre nosotros</string>
     <string name="ayuda">Ayuda</string>
@@ -60,4 +61,10 @@
         Agradecer a los profesores Félix De Pablo, Ernesto Ramiro y Pilar Martín la formación
         y ayuda prestada para que este proyecto haya sido posible.</string>
     <string name="descripcion">Descripción</string>
+    <string name="crear_post">CREAR POST</string>
+    <string name="et_titulo">Titulo</string>
+    <string name="et_desc_post">Descripcion del problema</string>
+    <string name="et_modelo">Modelo del coche</string>
+    <string name="et_responde">Escribe tu respuesta</string>
+    <string name="warn_no_response">Debe introducir una respuesta</string>
 </resources>
