@@ -67,4 +67,5 @@
     <string name="et_modelo">Modelo del coche</string>
     <string name="et_responde">Escribe tu respuesta</string>
     <string name="warn_no_response">Debe introducir una respuesta</string>
+    <string name="btn_responder">RESPONDER</string>
 </resources>

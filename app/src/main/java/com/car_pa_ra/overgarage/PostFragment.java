@@ -117,7 +117,7 @@ public class PostFragment extends Fragment {
 
         txtNomPost.setText(p.getTitulo());
         txtNomModel.setText(p.getDescripcion());
-        Glide.with(getContext())
+        Glide.with(imgUser)
                 .load(img)
                 .circleCrop()
                 .into(imgUser);

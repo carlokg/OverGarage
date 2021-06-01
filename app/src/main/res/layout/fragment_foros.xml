@@ -44,9 +44,9 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/dp24"
             android:layout_marginTop="@dimen/dp24"
-            android:src="@drawable/ic_add"
-            app:tint="@color/white"
-            android:backgroundTint="@color/RojoAcento"/>
+            android:src="@drawable/ic_action_name"
+            app:tint="@color/RojoAcento"
+            android:backgroundTint="@color/white"/>
 
     </LinearLayout>
 
