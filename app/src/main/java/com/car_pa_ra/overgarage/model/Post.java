@@ -9,20 +9,20 @@ public class Post {
     private String imagen;
     private String descPro;
     private String categoria;
-    private String userUid;
+    private String userImg;
     private Map<String,Response> responses;
     private String idPost;
 
     public Post() {
     }
 
-    public Post(String titulo, String descripcion, String imagen, String descPro, String categoria, String userUid, String idPost) {
+    public Post(String titulo, String descripcion, String imagen, String descPro, String categoria, String userImg, String idPost) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.imagen = imagen;
         this.descPro = descPro;
         this.categoria = categoria;
-        this.userUid = userUid;
+        this.userImg = userImg;
         this.idPost = idPost;
     }
 
@@ -42,8 +42,8 @@ public class Post {
         return categoria;
     }
 
-    public String getUserUid() {
-        return userUid;
+    public String getUserImg() {
+        return userImg;
     }
 
     public Map<String,Response> getResponses() {
@@ -70,7 +70,7 @@ public class Post {
                 ", imagen='" + imagen + '\'' +
                 ", descPro='" + descPro + '\'' +
                 ", categoria='" + categoria + '\'' +
-                ", userUid='" + userUid + '\'' +
+                ", userUid='" + userImg + '\'' +
                 ", idPost='" + idPost + '\'' +
                 '}';
     }

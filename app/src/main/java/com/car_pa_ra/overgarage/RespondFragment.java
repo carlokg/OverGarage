@@ -91,7 +91,6 @@ public class RespondFragment extends Fragment {
             Toast.makeText(getContext(), R.string.warn_no_response, Toast.LENGTH_SHORT).show();
         } else{
             Response r = new Response(respuesta,img,userNom);
-            Map<String, Response> m = new HashMap<>();
             myRef.child(postId).child("responses").push().setValue(r);
         }
     }
