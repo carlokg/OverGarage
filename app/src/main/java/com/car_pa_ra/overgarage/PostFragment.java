@@ -43,8 +43,6 @@ public class PostFragment extends Fragment {
     private MyViewModel vModel;
     Post p = null;
     String idPost;
-    String idUser;
-    String img = new String();
 
     TextView txtNomPost;
     TextView txtNomModel;
@@ -60,7 +58,6 @@ public class PostFragment extends Fragment {
 
     DatabaseReference dbRef;
     ValueEventListener vel;
-    ValueEventListener velU;
     ValueEventListener velR;
 
     public PostFragment() {}
@@ -117,8 +114,8 @@ public class PostFragment extends Fragment {
 
         txtNomPost.setText(p.getTitulo());
         txtNomModel.setText(p.getDescripcion());
-        Glide.with(imgUser)
-                .load(img)
+        Glide.with(getContext())
+                .load(p.getUserImg())
                 .circleCrop()
                 .into(imgUser);
         txtDesc.setText(p.getDescPro());
@@ -135,27 +132,7 @@ public class PostFragment extends Fragment {
         }
     }
 
-    private void addListenerU() {
-        if (velU == null) {
-            velU = new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    for (DataSnapshot dss: dataSnapshot.getChildren()) {
-                        if(dss.getValue(Usuario.class).getuId().equals(idUser)) {
-                            img = dss.getValue(Usuario.class).getImg();
-                        }
-                    }
-                }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getContext(),
-                            R.string.error_lectura, Toast.LENGTH_LONG).show();
-                }
-            };
-            dbRef.child("user").addValueEventListener(velU);
-        }
-    }
     private void addListenerR() {
         if (velR == null) {
             velR = new ValueEventListener() {
@@ -209,10 +186,6 @@ public class PostFragment extends Fragment {
         if (vel != null) {
             dbRef.removeEventListener(vel);
             vel = null;
-        }
-        if (velU != null) {
-            dbRef.removeEventListener(velU);
-            velU = null;
         }
         if (velR != null) {
             dbRef.removeEventListener(velR);

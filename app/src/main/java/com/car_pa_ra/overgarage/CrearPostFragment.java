@@ -47,11 +47,12 @@ public class CrearPostFragment extends Fragment {
     private FirebaseUser fbu;
 
     String userId;
+    String userImg;
     Categoria c;
     String cat;
 
     DatabaseReference myRef;
-    ValueEventListener vel;
+    ValueEventListener velU;
     Usuario u;
 
     public CrearPostFragment() {
@@ -81,6 +82,7 @@ public class CrearPostFragment extends Fragment {
         userId = fbu.getUid();
         c = vModel.getC();
         cat = c.getTitulo();
+        addListenerU();
 
 
         btnResponder.setOnClickListener(new View.OnClickListener() {
@@ -112,16 +114,34 @@ public class CrearPostFragment extends Fragment {
 
 
         } else{
-            Post p = new Post(titStr,modStr,img ,descStr,cat,userId,
+            Post p = new Post(titStr,modStr,img ,descStr,cat,userImg,
                     modStr+"_"+userId.substring(0,5));
 
             Log.d("Post:", p.toString());
             myRef.child("post").child(modStr+"_"+userId.substring(0,5))
                     .setValue(p);
-
         }
+    }
 
+    private void addListenerU() {
+        if (velU == null) {
+            velU = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot dss: dataSnapshot.getChildren()) {
+                        if(dss.getValue(Usuario.class).getuId().equals(userId)) {
+                            userImg = dss.getValue(Usuario.class).getImg();
+                        }
+                    }
+                }
 
-
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    Toast.makeText(getContext(),
+                            R.string.error_lectura, Toast.LENGTH_LONG).show();
+                }
+            };
+            myRef.child("user").addValueEventListener(velU);
+        }
     }
 }
