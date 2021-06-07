@@ -84,7 +84,6 @@ public class PostFragment extends Fragment {
 
         vModel = ViewModelProviders.of((FragmentActivity) getActivity()).get(MyViewModel.class);
         idPost = vModel.getP().getIdPost();
-        idUser = vModel.getP().getUserUid();
 
         lResponse = new ArrayList<>();
 
@@ -92,7 +91,6 @@ public class PostFragment extends Fragment {
         recycler.setHasFixedSize(true);
 
         addListener();
-        addListenerU();
         addListenerR();
 
         btnResponsePost.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +112,7 @@ public class PostFragment extends Fragment {
 
         txtNomPost.setText(p.getTitulo());
         txtNomModel.setText(p.getDescripcion());
-        Glide.with(getContext())
+        Glide.with(imgUser)
                 .load(p.getUserImg())
                 .circleCrop()
                 .into(imgUser);
@@ -138,6 +136,7 @@ public class PostFragment extends Fragment {
             velR = new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    lResponse.clear();
                     for (DataSnapshot dss: dataSnapshot.getChildren()) {
                         Response r = dss.getValue(Response.class);
                         lResponse.add(r);

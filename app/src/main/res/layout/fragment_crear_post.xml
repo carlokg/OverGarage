@@ -64,7 +64,7 @@
             android:id="@+id/btnResp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Responder"
+            android:text="@string/crear_post"
             android:layout_marginTop="@dimen/dp64"
             android:layout_below="@id/etDesc"
             style="@style/HidraButton">
