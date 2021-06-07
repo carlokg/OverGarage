@@ -57,7 +57,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvPost"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp320"
+            android:layout_height="@dimen/dp400"
             android:scrollbars="vertical"
             android:layout_below="@+id/txtDesc"
             android:layout_marginTop="@dimen/dp16"/>
@@ -66,8 +66,8 @@
             android:id="@+id/btnResponsePost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rvPost"
-            android:layout_marginTop="@dimen/dp16"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp8"
             style="@style/HidraButton"
             android:text="@string/btn_responder"
             />
